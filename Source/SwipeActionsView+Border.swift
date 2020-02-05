@@ -4,9 +4,8 @@ extension SwipeActionsView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
-        let rgbValue: CGFloat = 230/255
-        self.layer.borderColor = UIColor(red: rgbValue, green: rgbValue, blue: rgbValue, alpha: 1).cgColor
-        self.backgroundColor = UIColor.blue
+        self.layer.borderColor = UIColor(white: 0.9, alpha: 1).cgColor
+        self.backgroundColor = .clear
         self.layer.borderWidth = 0.5
     }
 
