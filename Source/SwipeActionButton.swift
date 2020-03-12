@@ -65,7 +65,7 @@ class SwipeActionButton: UIButton {
     func titleBoundingRect(with size: CGSize) -> CGRect {
         guard let title = currentTitle, let font = titleLabel?.font else { return .zero }
         
-        return title.boundingRect(with: size, options: [.usesLineFragmentOrigin], attributes: [kCTFontAttributeName as NSAttributedStringKey: font], context: nil)
+        return title.boundingRect(with: size, options: [.usesLineFragmentOrigin], attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
     }
     
     override func titleRect(forContentRect contentRect: CGRect) -> CGRect {

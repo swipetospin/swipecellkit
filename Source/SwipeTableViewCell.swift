@@ -332,7 +332,7 @@ open class SwipeTableViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let point = convert(point, to: superview!)
 
-        if !UIAccessibilityIsVoiceOverRunning() {
+        if !UIAccessibility.isVoiceOverRunning {
             for cell in collectionView?.swipeCells ?? [] {
                 if (cell.state == .left || cell.state == .right) && !cell.contains(point: point) {
                     collectionView?.hideSwipeCell()
@@ -580,7 +580,7 @@ extension SwipeTableViewCell {
     /// :nodoc:
     override open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == tapGestureRecognizer {
-            if UIAccessibilityIsVoiceOverRunning() {
+            if UIAccessibility.isVoiceOverRunning {
                 collectionView?.hideSwipeCell()
             }
 
